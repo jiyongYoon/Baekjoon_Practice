@@ -1,10 +1,8 @@
 function solution(myString, pat) {
-    let result = 0;
+    let arr = []
     for (let i = 0; i <= myString.length - pat.length; i++) {
-        let checkString = myString.substring(i, i + pat.length);
-        if (checkString === pat) {
-            result++;
-        }
+        arr.push(myString.substring(i, i + pat.length));
     }
-    return result;
+    
+    return arr.filter((x) => x === pat).length;
 }
